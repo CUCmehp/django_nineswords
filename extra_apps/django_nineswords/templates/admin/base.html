@@ -1,0 +1,177 @@
+{% load static i18n user_helper %}<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% get_sys_common_title %}{% endblock %}</title>
+
+    {% block meta %}
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta http-equiv="Content-Language" content="en"/>
+        <meta name="msapplication-TileColor" content="#2d89ef">
+        <meta name="theme-color" content="#4188c9">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="HandheldFriendly" content="True">
+    {% endblock %}
+
+    {% block stylesheets %}
+        <meta name="MobileOptimized" content="320">
+        {% include 'admin/lib/_styles.html' %}
+    {% endblock %}
+
+    {% block front_script %}
+        {% include 'admin/lib/_script.html' %}
+    {% endblock %}
+
+    {% block extra_style %}{% endblock %}
+
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}"
+      data-admin-utc-offset="{% now "Z" %}">
+{% block body %}
+    <div class="page">
+        <div class="page-main">
+            {% if not is_popup %}
+                <!-- top header -->
+                {% block top_header %}
+                    {% include 'admin/lib/_top_header.html' %}
+                {% endblock %}
+            {% endif %}
+
+            <!-- main page -->
+            <div id="wrapper">
+                {% if not is_popup %}
+                    {% block main_sidebar %}
+                        {% include 'admin/lib/_main_sidebar.html' %}
+                    {% endblock %}
+                {% endif %}
+
+                <!-- content-wrapper -->
+                {% block content-wrapper %}
+                    <div id="content-wrapper">
+                        <div class="container-fluid col-12">
+                            {% block main_content_breadcrumb %}
+                                <ul class="breadcrumb-admin-maincontent">
+                                    <li class="breadcrumb-admin-maincontent-item">
+                                        <a href="#"><a href="{% url 'admin:index' %}"><i
+                                                class="fa fa-dashboard"></i> {% trans 'Home' %}</a></a>
+                                    </li>
+                                    {% if title %}
+                                        <li class="breadcrumb-admin-maincontent-item">{{ title }}</li>
+                                    {% endif %}
+                                </ul>
+                            {% endblock %}
+
+                            {% block messages %}
+                                {% if messages %}
+                                    <ul class="messagelist mt-5">
+                                        {% for message in messages %}
+                                            <li{% if message.tags %}
+                                                class="{{ message.tags }}"{% endif %}>{{ message|capfirst }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            {% endblock messages %}
+
+                            {% block page_header %}
+                                <div class="page-header">
+                                    <h1 class="page-title">
+                                        {% block content_title %}{% if title %}{{ title }}{% endif %}{% endblock %}
+                                    </h1>
+                                </div>
+                            {% endblock %}
+
+                            {% block content %}
+                                <!-- main content -->
+                                <div id="_main_content">
+                                    <div class="row">
+                                        {% if has_permission %}
+                                            {#{% for app in app_list %}#}
+                                            {% for app in available_apps %}
+                                                <div class="card">
+                                                    <div class="card-status bg-green"></div>
+                                                    <div class="card-header">
+                                                        <h3 class="card-title">{{ app.name }}</h3>
+                                                        <div class="card-options">
+                                                            <a href="#" class="card-options-collapse"
+                                                               data-toggle="card-collapse"><i
+                                                                    class="fa fa-chevron-up"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            {% for model in app.models %}
+                                                                <div class="col-md-6 col-xl-4">
+                                                                    <div class="card">
+                                                                        <div class="card-header">
+                                                                            <h3 class="card-title">{{ model.name }}</h3>
+                                                                            <div class="card-options">
+                                                                                <a href="#"
+                                                                                   class="card-options-collapse"
+                                                                                   data-toggle="card-collapse"><i
+                                                                                        class="fa fa-chevron-up"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="card-body">
+                                                                            {% if model.add_url %}
+                                                                                <a href="{{ model.add_url }}"
+                                                                                   class="btn btn-outline-primary btn-sm btn-block">
+                                                                                    <span class="fa fa-plus"></span>{% trans 'Add' %}
+                                                                                </a>
+                                                                            {% endif %}
+                                                                            {% if model.admin_url %}
+                                                                                <a href="{{ model.admin_url }}"
+                                                                                   class="btn btn-outline-primary btn-sm btn-block">
+                                                                                    <span class="fa fa-pencil"></span>{% trans 'Change' %}
+                                                                                </a>
+                                                                            {% endif %}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        {% else %}
+                                            <div class="mt-3 ml-3">
+                                                <p>{% trans "You don't have permission to edit anything." %}</p>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            {% endblock %}
+                        </div>
+                    </div>
+                {% endblock %}
+            </div>
+        </div>
+        <!-- content-footer -->
+        {% block footer %}
+            <footer class="footer">
+                <div class="container">
+                    <div class="row align-items-center flex-row-reverse">
+                        <div class="col-12 col-lg-auto mt-3 mt-lg-0 text-center">
+                            Copyright © 2019 <a
+                                href="{% block tech_company_href %}{% get_tech_company_href %}{% endblock %}">
+                            {% block tech_company %}{% get_tech_company %}{% endblock %}</a>, All rights reserved.
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        {% endblock %}
+    </div>
+
+    {% block javascript %}
+        {% include 'admin/lib/_scripts.html' %}
+        {% block extra_javascipt %}{% endblock %}
+    {% endblock %}
+    </body>
+{% endblock %}
+
+</html>

@@ -1,0 +1,2056 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Content-Language" content="en" />
+  <meta name="msapplication-TileColor" content="#2d89ef">
+  <meta name="theme-color" content="#4188c9">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <!-- Generated: 2018-04-16 09:29:05 +0200 -->
+  <title>主页</title>
+  <!-- Dashboard Core -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <link href="statics/css/dashboard.css" rel="stylesheet" />
+  <link href="statics/css/pamiadmin.css" rel="stylesheet" />
+  <script src="statics/js/dashboard.js"></script>
+  <script src="statics/js/bootstrap.bundle.min.js"></script>
+  <!-- Echarts -->
+  <script src="statics/js/echarts_4_2_0_rc2.min.js"></script>
+  <!-- <script src="bower_components/bootstrap/dist/js/bootstrap.min.js" ></script> -->
+  <!-- <link href="statics/css/tabler.css" rel="stylesheet" /> -->
+  <!-- c3.js Charts Plugin -->
+  <!-- <link href="./assets/plugins/charts-c3/plugin.css" rel="stylesheet" />
+    <script src="./assets/plugins/charts-c3/plugin.js"></script> -->
+  <!-- Google Maps Plugin -->
+  <!-- <link href="./assets/plugins/maps-google/plugin.css" rel="stylesheet" />
+    <script src="./assets/plugins/maps-google/plugin.js"></script> -->
+  <!-- Input Mask Plugin -->
+  <!-- <script src="./assets/plugins/input-mask/plugin.js"></script> -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- pamiadmin.js -->
+  <script src="statics/js/pamiadmin.js"></script>
+</head>
+
+<body class="">
+  <div class="page">
+    <div class="page-main">
+      <!-- top header -->
+      <div class="header bg-color-admin py-4">
+        <div class="container-fluid">
+          <div class="d-flex">
+            <a class="header-brand" href="index.html">
+              <img src="statics/image/brand_demo.png" style="width:120px;height:32px;" class="header-brand-img"
+                alt="logo">
+            </a>
+            <button class="btn btn-link text-default btn-sm order-1 order-sm-0" id="sidebarToggle" href="#">
+              <i class="fa fa-bars"></i>
+            </button>
+            <div class="ml-6">
+              <p class="page-title text-white">请输入后台名称</p>
+            </div>
+            <div class="d-flex order-lg-2 ml-auto">
+              <div class="nav-item d-none d-md-flex">
+                <a href="" class="btn btn-sm admin-btn-outline-primary" target="_blank">Source code</a>
+              </div>
+              <div class="dropdown d-none d-md-flex">
+                <a class="nav-link icon" data-toggle="dropdown">
+                  <i class="fa fa-bell"></i>
+                  <span class="nav-unread"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                  <a href="#" class="dropdown-item d-flex">
+                    <span class="avatar mr-3 align-self-center"
+                      style="background-image: url(statics/image/faces/male/41.jpg)"></span>
+                    <div>
+                      <strong>Nathan</strong> pushed new commit: Fix page load performance issue.
+                      <div class="small text-muted">10 minutes ago</div>
+                    </div>
+                  </a>
+                  <a href="#" class="dropdown-item d-flex">
+                    <span class="avatar mr-3 align-self-center"
+                      style="background-image: url(statics/image/faces/female/1.jpg)"></span>
+                    <div>
+                      <strong>Alice</strong> started new task: Tabler UI design.
+                      <div class="small text-muted">1 hour ago</div>
+                    </div>
+                  </a>
+                  <a href="#" class="dropdown-item d-flex">
+                    <span class="avatar mr-3 align-self-center"
+                      style="background-image: url(statics/image/faces/female/18.jpg)"></span>
+                    <div>
+                      <strong>Rose</strong> deployed new version of NodeJS REST Api V3
+                      <div class="small text-muted">2 hours ago</div>
+                    </div>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a href="#" class="dropdown-item text-center text-muted-dark">Mark all as read</a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
+                  <span class="avatar" style="background-image: url(statics/image/faces/female/25.jpg)"></span>
+                  <span class="ml-2 d-none d-lg-block">
+                    <span class="text-default">Jane Pearson</span>
+                    <small class="text-muted d-block mt-1">Administrator</small>
+                  </span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                  <a class="dropdown-item" href="#">
+                    <i class="dropdown-icon fa fa-user"></i> 个人信息
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <i class="dropdown-icon fa fa-cog"></i> 系统设置
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <span class="float-right"><span class="badge badge-primary">6</span></span>
+                    <i class="dropdown-icon fa fa-commenting-o"></i> 面板消息
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <i class="dropdown-icon fa fa-comment-o"></i> 消息
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">
+                    <i class="dropdown-icon fa fa-info-circle"></i> 帮助
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <i class="dropdown-icon fa fa-sign-out"></i> 退出
+                  </a>
+                </div>
+              </div>
+            </div>
+            <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0" data-toggle="collapse"
+              data-target="#headerMenuCollapse">
+              <span class="header-toggler-icon"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- main page -->
+      <div id="wrapper">
+        <!-- sidebar -->
+        <aside class="main-sidebar">
+          <!-- sidebar: style can be found in sidebar.less -->
+          <section class="sidebar sidebar-min_height">
+            <!-- Sidebar user panel -->
+            <div class="user-panel">
+              <div class="pull-left image">
+                <img src="statics/image/faces/male/user2-160x160.jpg" class="img-circle" alt="User Image">
+              </div>
+              <div class="pull-left info">
+                <p>Alexander Pierce</p>
+                <a href="#"><i class="fa fa-circle text-success"></i>在线</a>
+              </div>
+            </div>
+            <!-- search form -->
+            <form action="#" method="get" class="sidebar-form">
+              <div class="input-group">
+                <input type="text" id="search-input-box" class="form-control" placeholder="Search...">
+                <span class="input-group-btn">
+                  <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                  </button>
+                </span>
+              </div>
+            </form>
+            <!-- /.search form -->
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu" data-widget="tree">
+              <li class="header">主导航</li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-dashboard"></i> <span>仪表盘</span>
+                  <span class="pull-right-container">
+                    <small class="badge pull-right bg-green">new</small>
+                  </span>
+                </a>
+              </li>
+              <li class="treeview">
+                <a href="#">
+                  <i class="fa fa-files-o"></i>
+                  <span>卡片图表</span>
+                  <span class="pull-right-container">
+                    <span class="ml-auto badge badge-primary">2</span>
+                  </span>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="cards.html"><i class="fa fa-circle-o"></i>卡片设计</a></li>
+                  <li><a href="charts.html"><i class="fa fa-circle-o"></i>图表</a></li>
+                </ul>
+              </li>
+              <li class="treeview">
+                <a href="pages/widgets.html">
+                  <i class="fa fa-th"></i> <span>组件</span>
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="maps.html"><i class="fa fa-circle-o"></i>地图</a></li>
+                  <li><a href="store.html"><i class="fa fa-circle-o"></i>商店</a></li>
+                  <li><a href="blog.html"><i class="fa fa-circle-o"></i>博客</a></li>
+                  <li><a href="carousel.html"><i class="fa fa-circle-o"></i>轮播图</a></li>
+                </ul>
+              </li>
+              <li class="treeview">
+                <a href="#">
+                  <i class="fa fa-pie-chart"></i>
+                  <span>页面</span>
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="profile.html"><i class="fa fa-circle-o"></i>个人信息</a></li>
+                  <li><a href="login.html"><i class="fa fa-circle-o"></i>登录</a></li>
+                  <li><a href="register.html"><i class="fa fa-circle-o"></i>注册</a></li>
+                  <li><a href="forgot-password.html"><i class="fa fa-circle-o"></i>忘记密码</a></li>
+                  <li><a href="400.html"><i class="fa fa-circle-o"></i>400错误</a></li>
+                  <li><a href="401.html"><i class="fa fa-circle-o"></i>401错误</a></li>
+                  <li><a href="403.html"><i class="fa fa-circle-o"></i>403错误</a></li>
+                  <li><a href="404.html"><i class="fa fa-circle-o"></i>404错误</a></li>
+                  <li><a href="500.html"><i class="fa fa-circle-o"></i>500错误</a></li>
+                  <li><a href="504.html"><i class="fa fa-circle-o"></i>504错误</a></li>
+                  <li><a href="email.html"><i class="fa fa-envelope-o"></i>邮件</a></li>
+                  <li><a href="empty.html"><i class="fa fa-circle-o"></i>空白页面</a></li>
+                  <li><a href="pagination.html"><i class="fa fa-circle-o"></i>分页</a></li>
+                </ul>
+              </li>
+              <li class="treeview">
+                <a href="#">
+                  <i class="fa fa-laptop"></i>
+                  <span>UI 元素</span>
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> 常规</a></li>
+                  <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> 图标</a></li>
+                  <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> 按钮</a></li>
+                  <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> 滑动</a></li>
+                  <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> 时间轴</a></li>
+                  <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> 模块</a></li>
+                </ul>
+              </li>
+              <li class="treeview">
+                <a href="#">
+                  <i class="fa fa-edit"></i> <span>表单</span>
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> 常规元素</a></li>
+                  <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> 高级元素</a></li>
+                  <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> 编辑</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="form-elements.html">
+                  <i class="fa fa-table"></i> <span>表格</span>
+                </a>
+              </li>
+              <li>
+                <a href="gallery.html">
+                  <i class="fa fa-image"></i><span>图片墙</span>
+                </a>
+              </li>
+              <li>
+                <a href="pages/calendar.html">
+                  <i class="fa fa-calendar"></i> <span>日历</span>
+                  <span class="pull-right-container">
+                    <small class="badge pull-right bg-red">3</small>
+                    <small class="badge pull-right bg-blue">17</small>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="email.html">
+                  <i class="fa fa-envelope"></i> <span>邮箱</span>
+                  <span class="pull-right-container">
+                    <small class="badge pull-right bg-yellow">12</small>
+                    <small class="badge pull-right bg-green">16</small>
+                    <small class="badge pull-right bg-red">5</small>
+                  </span>
+                </a>
+              </li>
+              <li class="treeview">
+                <a href="#">
+                  <i class="fa fa-folder"></i> <span>样例</span>
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> 发票单据</a></li>
+                  <li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> 设置</a></li>
+                  <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> 登陆</a></li>
+                  <li><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> 注册</a></li>
+                  <li><a href="pages/examples/lockscreen.html"><i class="fa fa-circle-o"></i> 锁屏</a></li>
+                  <li><a href="pages/examples/404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
+                  <li><a href="pages/examples/500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
+                  <li><a href="pages/examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
+                  <li><a href="pages/examples/pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
+                </ul>
+              </li>
+              <li class="treeview">
+                <a href="#">
+                  <i class="fa fa-share"></i><span>多级菜单</span>
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="#"><i class="fa fa-circle-o"></i> 一级菜单</a></li>
+                  <li class="treeview">
+                    <a href="#">
+                      <i class="fa fa-chevron-circle-down"></i>一级菜单可展开
+                      <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                      </span>
+                    </a>
+                    <ul class="treeview-menu">
+                      <li class="treeview">
+                        <a href="#"><i class="fa fa-chevron-circle-down"></i> 二级菜单可展开
+                          <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                          </span>
+                        </a>
+                        <ul class="treeview-menu">
+                          <li class="treeview">
+                            <a href="#"><i class="fa fa-circle-o"></i> 三级菜单可展开
+                              <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                              </span>
+                            </a>
+                            <ul class="treeview-menu">
+                              <li>
+                                <a href="#"><i class="fa fa-circle-o"></i> 四级菜单不可展开</a>
+                              </li>
+                              <li>
+                                <a href="#"><i class="fa fa-circle-o"></i> 四级菜单不可展开</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li><a href="#"><i class="fa fa-circle-o"></i> 三级菜单不可展开</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#"><i class="fa fa-circle-o"></i> 二级菜单不可展开</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#"><i class="fa fa-circle-o"></i> 一级菜单</a></li>
+                </ul>
+              </li>
+              <li><a href="#"><i class="fa fa-book"></i> <span>文档</span></a></li>
+              <li class="header">标签</li>
+              <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>重要</span></a></li>
+              <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>警告</span></a></li>
+              <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>消息</span></a></li>
+            </ul>
+          </section>
+          <!-- /.sidebar -->
+        </aside>
+
+        <!-- content-wrapper -->
+        <div id="content-wrapper">
+          <div class="container-fluid">
+            <!-- content breadcrumb -->
+            <ul class="breadcrumb-admin-maincontent">
+              <li class="breadcrumb-admin-maincontent-item">
+                <a href="#">系统1</a>
+              </li>
+              <li class="breadcrumb-admin-maincontent-item"><a href="#">模块1</a></li>
+              <li class="breadcrumb-admin-maincontent-item">功能1</li>
+            </ul>
+
+            <!-- content header -->
+            <div class="page-header">
+              <h1 class="page-title">
+                Dashboard
+              </h1>
+            </div>
+
+            <!-- main content -->
+            <div id="_main-content">
+              <div class="row row-cards">
+                <div class="col-6 col-sm-4 col-lg-2">
+                  <div class="card">
+                    <div class="card-body p-3 text-center">
+                      <div class="text-right text-green">
+                        6%
+                        <i class="fa fa-chevron-up"></i>
+                      </div>
+                      <div class="h1 m-0">43</div>
+                      <div class="text-muted mb-4">New Tickets</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-lg-2">
+                  <div class="card">
+                    <div class="card-body p-3 text-center">
+                      <div class="text-right text-red">
+                        -3%
+                        <i class="fa fa-chevron-down"></i>
+                      </div>
+                      <div class="h1 m-0">17</div>
+                      <div class="text-muted mb-4">Closed Today</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-lg-2">
+                  <div class="card">
+                    <div class="card-body p-3 text-center">
+                      <div class="text-right text-green">
+                        9%
+                        <i class="fa fa-chevron-up"></i>
+                      </div>
+                      <div class="h1 m-0">7</div>
+                      <div class="text-muted mb-4">New Replies</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-lg-2">
+                  <div class="card">
+                    <div class="card-body p-3 text-center">
+                      <div class="text-right text-green">
+                        3%
+                        <i class="fa fa-chevron-up"></i>
+                      </div>
+                      <div class="h1 m-0">27.3K</div>
+                      <div class="text-muted mb-4">Followers</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-lg-2">
+                  <div class="card">
+                    <div class="card-body p-3 text-center">
+                      <div class="text-right text-red">
+                        -2%
+                        <i class="fa fa-chevron-down"></i>
+                      </div>
+                      <div class="h1 m-0">$95</div>
+                      <div class="text-muted mb-4">Daily Earnings</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4 col-lg-2">
+                  <div class="card">
+                    <div class="card-body p-3 text-center">
+                      <div class="text-right text-red">
+                        -1%
+                        <i class="fa fa-chevron-down"></i>
+                      </div>
+                      <div class="h1 m-0">621</div>
+                      <div class="text-muted mb-4">Products</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="card">
+                    <div class="card-header">
+                      <h3 class="card-title">某地区蒸发量和降水量</h3>
+                    </div>
+                    <div id="chartmain" style="height: 20rem"></div>
+                    <script type="text/javascript">
+                      option = {
+                        title: {
+                          // text: '某地区蒸发量和降水量',
+                          subtext: '纯属虚构'
+                        },
+                        tooltip: {
+                          trigger: 'axis'
+                        },
+                        legend: {
+                          data: ['蒸发量', '降水量']
+                        },
+                        toolbox: {
+                          show: true,
+                          feature: {
+                            dataView: { show: true, readOnly: false },
+                            magicType: { show: true, type: ['line', 'bar'] },
+                            restore: { show: true },
+                            saveAsImage: { show: true }
+                          }
+                        },
+                        calculable: true,
+                        xAxis: [
+                          {
+                            type: 'category',
+                            data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+                          }
+                        ],
+                        yAxis: [
+                          {
+                            type: 'value'
+                          }
+                        ],
+                        series: [
+                          {
+                            name: '蒸发量',
+                            type: 'bar',
+                            data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
+                            markPoint: {
+                              data: [
+                                { type: 'max', name: '最大值' },
+                                { type: 'min', name: '最小值' }
+                              ]
+                            },
+                            markLine: {
+                              data: [
+                                { type: 'average', name: '平均值' }
+                              ]
+                            }
+                          },
+                          {
+                            name: '降水量',
+                            type: 'bar',
+                            data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+                            markPoint: {
+                              data: [
+                                { name: '年最高', value: 182.2, xAxis: 7, yAxis: 183 },
+                                { name: '年最低', value: 2.3, xAxis: 11, yAxis: 3 }
+                              ]
+                            },
+                            markLine: {
+                              data: [
+                                { type: 'average', name: '平均值' }
+                              ]
+                            }
+                          }
+                        ]
+                      };
+                      //初始化echarts实例
+                      var myChart = echarts.init(document.getElementById('chartmain'));
+                      //使用制定的配置项和数据显示图表
+                      myChart.setOption(option);
+                    </script>
+                    <div class="table-responsive">
+                      <table class="table card-table table-striped table-vcenter">
+                        <thead>
+                          <tr>
+                            <th colspan="2">User</th>
+                            <th>Commit</th>
+                            <th>Date</th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="w-1"><span class="avatar"
+                                style="background-image: url(./statics/image/faces/male/9.jpg)"></span></td>
+                            <td>Ronald Bradley</td>
+                            <td>Initial commit</td>
+                            <td class="text-nowrap">May 6, 2018</td>
+                            <td class="w-1"><a href="#" class="icon"><i class="fa fa-trash"></i></a></td>
+                          </tr>
+                          <tr>
+                            <td><span class="avatar">BM</span></td>
+                            <td>Russell Gibson</td>
+                            <td>Main structure</td>
+                            <td class="text-nowrap">April 22, 2018</td>
+                            <td><a href="#" class="icon"><i class="fa fa-trash"></i></a></td>
+                          </tr>
+                          <tr>
+                            <td><span class="avatar"
+                                style="background-image: url(./statics/image/faces/female/1.jpg)"></span></td>
+                            <td>Beverly Armstrong</td>
+                            <td>Left sidebar adjustments</td>
+                            <td class="text-nowrap">April 15, 2018</td>
+                            <td><a href="#" class="icon"><i class="fa fa-trash"></i></a></td>
+                          </tr>
+                          <tr>
+                            <td><span class="avatar"
+                                style="background-image: url(./statics/image/faces/male/4.jpg)"></span>
+                            </td>
+                            <td>Bobby Knight</td>
+                            <td>Topbar dropdown style</td>
+                            <td class="text-nowrap">April 8, 2018</td>
+                            <td><a href="#" class="icon"><i class="fa fa-trash"></i></a></td>
+                          </tr>
+                          <tr>
+                            <td><span class="avatar"
+                                style="background-image: url(./statics/image/faces/female/11.jpg)"></span></td>
+                            <td>Sharon Wells</td>
+                            <td>Fixes #625</td>
+                            <td class="text-nowrap">April 9, 2018</td>
+                            <td><a href="#" class="icon"><i class="fa fa-trash"></i></a></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                  <div class="alert alert-primary">Are you in trouble? <a href="" class="alert-link">Read
+                      our documentation</a> with code samples.
+                  </div>
+                  <div class="row">
+                    <!-- <div class="col-sm-6">
+                              <div class="card">
+                                <div class="card-header">
+                                  <h3 class="card-title">Chart title</h3>
+                                </div>
+                                <div class="card-body">
+                                  <div id="chart_3dmap" style="height: 12rem;"></div>
+                                </div>
+                              </div>
+                              <script>
+                                option = {
+                                  backgroundColor: '#000',
+                                  globe: {
+                                    baseTexture: 'statics/image/data-gl/earth.jpg',
+                                    heightTexture: 'statics/image/data-gl/bathymetry_bw_composite_4k.jpg',
+            
+                                    displacementScale: 0.1,
+            
+                                    shading: 'lambert',
+            
+                                    environment: 'statics/image/data-gl/starfield.jpg',
+            
+                                    light: {
+                                      ambient: {
+                                        intensity: 0.1
+                                      },
+                                      main: {
+                                        intensity: 1.5
+                                      }
+                                    },
+            
+                                    layers: [{
+                                      type: 'blend',
+                                      blendTo: 'emission',
+                                      texture: 'statics/image/data-gl/night.jpg'
+                                    }, {
+                                      type: 'overlay',
+                                      texture: 'statics/image/data-gl/clouds.png',
+                                      shading: 'lambert',
+                                      distance: 5
+                                    }]
+                                  },
+                                  series: []
+                                }
+                                //初始化echarts实例
+                                var myChart1 = echarts.init(document.getElementById('chart_3dmap'));
+                                //使用制定的配置项和数据显示图表
+                                myChart1.setOption(option);
+                              </script>
+                            </div> -->
+                    <div class="col-sm-6 col-lg-12">
+                      <div class="card">
+                        <div class="card-header">
+                          <h3 class="card-title">基础雷达图</h3>
+                        </div>
+                        <div class="card-body">
+                          <div id="chart_rader" style="height: 32rem;"></div>
+                        </div>
+                      </div>
+                      <script>
+                        option = {
+                          title: {
+                            // text: '基础雷达图'
+                          },
+                          tooltip: {},
+                          legend: {
+                            data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
+                          },
+                          radar: {
+                            // shape: 'circle',
+                            name: {
+                              textStyle: {
+                                color: '#fff',
+                                backgroundColor: '#999',
+                                borderRadius: 3,
+                                padding: [3, 5]
+                              }
+                            },
+                            indicator: [
+                              { name: '销售', max: 6500 },
+                              { name: '管理', max: 16000 },
+                              { name: '信息技术', max: 30000 },
+                              { name: '客服', max: 38000 },
+                              { name: '研发', max: 52000 },
+                              { name: '市场', max: 25000 }
+                            ]
+                          },
+                          series: [{
+                            name: '预算 vs 开销',
+                            type: 'radar',
+                            // areaStyle: {normal: {}},
+                            data: [
+                              {
+                                value: [4300, 10000, 28000, 35000, 50000, 19000],
+                                name: '预算分配（Allocated Budget）'
+                              },
+                              {
+                                value: [5000, 14000, 28000, 31000, 42000, 21000],
+                                name: '实际开销（Actual Spending）'
+                              }
+                            ]
+                          }]
+                        };
+                        //初始化echarts实例
+                        var myChart = echarts.init(document.getElementById('chart_rader'));
+                        //使用制定的配置项和数据显示图表
+                        myChart.setOption(option);
+                      </script>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="card">
+                        <div class="card-body text-center">
+                          <div class="h5">New feedback</div>
+                          <div class="display-4 font-weight-bold mb-4">62</div>
+                          <div class="progress progress-sm">
+                            <div class="progress-bar bg-red" style="width: 28%"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="card">
+                        <div class="card-body text-center">
+                          <div class="h5">Today profit</div>
+                          <div class="display-4 font-weight-bold mb-4">$652</div>
+                          <div class="progress progress-sm">
+                            <div class="progress-bar bg-green" style="width: 84%"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                  <div class="card p-3">
+                    <div class="d-flex align-items-center">
+                      <span class="stamp stamp-md bg-blue mr-3">
+                        <i class="fa fa-dollar-sign"></i>
+                      </span>
+                      <div>
+                        <h4 class="m-0"><a href="javascript:void(0)">132 <small>Sales</small></a></h4>
+                        <small class="text-muted">12 waiting payments</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                  <div class="card p-3">
+                    <div class="d-flex align-items-center">
+                      <span class="stamp stamp-md bg-green mr-3">
+                        <i class="fa fa-shopping-cart"></i>
+                      </span>
+                      <div>
+                        <h4 class="m-0"><a href="javascript:void(0)">78 <small>Orders</small></a></h4>
+                        <small class="text-muted">32 shipped</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                  <div class="card p-3">
+                    <div class="d-flex align-items-center">
+                      <span class="stamp stamp-md bg-red mr-3">
+                        <i class="fa fa-users"></i>
+                      </span>
+                      <div>
+                        <h4 class="m-0"><a href="javascript:void(0)">1,352 <small>Members</small></a></h4>
+                        <small class="text-muted">163 registered today</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                  <div class="card p-3">
+                    <div class="d-flex align-items-center">
+                      <span class="stamp stamp-md bg-yellow mr-3">
+                        <i class="fa fa-message-square"></i>
+                      </span>
+                      <div>
+                        <h4 class="m-0"><a href="javascript:void(0)">132 <small>Comments</small></a></h4>
+                        <small class="text-muted">16 waiting</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row row-cards row-deck">
+                <div class="col-lg-6">
+                  <div class="card card-aside">
+                    <a href="#" class="card-aside-column"
+                      style="background-image: url(./statics/image/photos/david-klaasen-54203-500.jpg)"></a>
+                    <div class="card-body d-flex flex-column">
+                      <h4><a href="#">And this isn't my nose. This is a false one.</a></h4>
+                      <div class="text-muted">Look, my liege! The Knights Who Say Ni demand a sacrifice! …Are you
+                        suggesting that coconuts migr...</div>
+                      <div class="d-flex align-items-center pt-5 mt-auto">
+                        <div class="avatar avatar-md mr-3"
+                          style="background-image: url(./statics/image/faces/female/18.jpg)"></div>
+                        <div>
+                          <a href="./profile.html" class="text-default">Rose Bradley</a>
+                          <small class="d-block text-muted">3 days ago</small>
+                        </div>
+                        <div class="ml-auto text-muted">
+                          <a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i
+                              class="fa fa-heart mr-1"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="card card-aside">
+                    <a href="#" class="card-aside-column"
+                      style="background-image: url(./statics/image/photos/david-marcu-114194-500.jpg)"></a>
+                    <div class="card-body d-flex flex-column">
+                      <h4><a href="#">Well, I didn't vote for you.</a></h4>
+                      <div class="text-muted">Well, we did do the nose. Why? Shut up! Will you shut up?! You don't
+                        frighten
+                        us, English pig-dog...</div>
+                      <div class="d-flex align-items-center pt-5 mt-auto">
+                        <div class="avatar avatar-md mr-3"
+                          style="background-image: url(./statics/image/faces/male/16.jpg)">
+                        </div>
+                        <div>
+                          <a href="./profile.html" class="text-default">Peter Richards</a>
+                          <small class="d-block text-muted">3 days ago</small>
+                        </div>
+                        <div class="ml-auto text-muted">
+                          <a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i
+                              class="fa fa-heart mr-1"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row row-cards row-deck">
+                <div class="col-12">
+                  <div class="card">
+                    <div class="table-responsive">
+                      <table class="table table-hover table-outline table-vcenter text-nowrap card-table">
+                        <thead>
+                          <tr>
+                            <th class="text-center w-1"><i class="icon-people"></i></th>
+                            <th>User</th>
+                            <th>Usage</th>
+                            <th class="text-center">Payment</th>
+                            <th>Activity</th>
+                            <th class="text-center">Satisfaction</th>
+                            <th class="text-center"><i class="icon-settings"></i></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="text-center">
+                              <div class="avatar d-block"
+                                style="background-image: url(./statics/image/faces/female/26.jpg)">
+                                <span class="avatar-status bg-green"></span>
+                              </div>
+                            </td>
+                            <td>
+                              <div>Elizabeth Martin</div>
+                              <div class="small text-muted">
+                                Registered: Mar 19, 2018
+                              </div>
+                            </td>
+                            <td>
+                              <div class="clearfix">
+                                <div class="float-left">
+                                  <strong>42%</strong>
+                                </div>
+                                <div class="float-right">
+                                  <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                                </div>
+                              </div>
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-yellow" role="progressbar" style="width: 42%"
+                                  aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </td>
+                            <td class="text-center">
+                              <i class="payment payment-visa"></i>
+                            </td>
+                            <td>
+                              <div class="small text-muted">Last login</div>
+                              <div>4 minutes ago</div>
+                            </td>
+                            <td class="text-center">
+                              <div class="mx-auto chart-circle chart-circle-xs" data-value="0.42" data-thickness="3"
+                                data-color="blue">
+                                <div class="chart-circle-value">42%</div>
+                              </div>
+                            </td>
+                            <td class="text-center">
+                              <div class="item-action dropdown">
+                                <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
+                                    class="fa fa-more-vertical"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-tag"></i>
+                                    Action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-edit-2"></i>
+                                    Another action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-message-square"></i>
+                                    Something else here</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-link"></i>
+                                    Separated link</a>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">
+                              <div class="avatar d-block"
+                                style="background-image: url(./statics/image/faces/female/17.jpg)">
+                                <span class="avatar-status bg-green"></span>
+                              </div>
+                            </td>
+                            <td>
+                              <div>Michelle Schultz</div>
+                              <div class="small text-muted">
+                                Registered: Mar 2, 2018
+                              </div>
+                            </td>
+                            <td>
+                              <div class="clearfix">
+                                <div class="float-left">
+                                  <strong>0%</strong>
+                                </div>
+                                <div class="float-right">
+                                  <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                                </div>
+                              </div>
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-red" role="progressbar" style="width: 0%" aria-valuenow="0"
+                                  aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </td>
+                            <td class="text-center">
+                              <i class="payment payment-googlewallet"></i>
+                            </td>
+                            <td>
+                              <div class="small text-muted">Last login</div>
+                              <div>5 minutes ago</div>
+                            </td>
+                            <td class="text-center">
+                              <div class="mx-auto chart-circle chart-circle-xs" data-value="0.0" data-thickness="3"
+                                data-color="blue">
+                                <div class="chart-circle-value">0%</div>
+                              </div>
+                            </td>
+                            <td class="text-center">
+                              <div class="item-action dropdown">
+                                <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
+                                    class="fa fa-more-vertical"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-tag"></i>
+                                    Action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-edit-2"></i>
+                                    Another action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-message-square"></i>
+                                    Something else here</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-link"></i>
+                                    Separated link</a>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">
+                              <div class="avatar d-block"
+                                style="background-image: url(./statics/image/faces/female/21.jpg)">
+                                <span class="avatar-status bg-gray"></span>
+                              </div>
+                            </td>
+                            <td>
+                              <div>Crystal Austin</div>
+                              <div class="small text-muted">
+                                Registered: Apr 7, 2018
+                              </div>
+                            </td>
+                            <td>
+                              <div class="clearfix">
+                                <div class="float-left">
+                                  <strong>96%</strong>
+                                </div>
+                                <div class="float-right">
+                                  <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                                </div>
+                              </div>
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-green" role="progressbar" style="width: 96%"
+                                  aria-valuenow="96" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </td>
+                            <td class="text-center">
+                              <i class="payment payment-mastercard"></i>
+                            </td>
+                            <td>
+                              <div class="small text-muted">Last login</div>
+                              <div>a minute ago</div>
+                            </td>
+                            <td class="text-center">
+                              <div class="mx-auto chart-circle chart-circle-xs" data-value="0.96" data-thickness="3"
+                                data-color="blue">
+                                <div class="chart-circle-value">96%</div>
+                              </div>
+                            </td>
+                            <td class="text-center">
+                              <div class="item-action dropdown">
+                                <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
+                                    class="fa fa-more-vertical"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-tag"></i>
+                                    Action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-edit-2"></i>
+                                    Another action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-message-square"></i>
+                                    Something else here</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-link"></i>
+                                    Separated link</a>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">
+                              <div class="avatar d-block"
+                                style="background-image: url(./statics/image/faces/male/32.jpg)">
+                                <span class="avatar-status bg-green"></span>
+                              </div>
+                            </td>
+                            <td>
+                              <div>Douglas Ray</div>
+                              <div class="small text-muted">
+                                Registered: Jan 15, 2018
+                              </div>
+                            </td>
+                            <td>
+                              <div class="clearfix">
+                                <div class="float-left">
+                                  <strong>6%</strong>
+                                </div>
+                                <div class="float-right">
+                                  <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                                </div>
+                              </div>
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-red" role="progressbar" style="width: 6%" aria-valuenow="6"
+                                  aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </td>
+                            <td class="text-center">
+                              <i class="payment payment-shopify"></i>
+                            </td>
+                            <td>
+                              <div class="small text-muted">Last login</div>
+                              <div>a minute ago</div>
+                            </td>
+                            <td class="text-center">
+                              <div class="mx-auto chart-circle chart-circle-xs" data-value="0.06" data-thickness="3"
+                                data-color="blue">
+                                <div class="chart-circle-value">6%</div>
+                              </div>
+                            </td>
+                            <td class="text-center">
+                              <div class="item-action dropdown">
+                                <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
+                                    class="fa fa-more-vertical"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-tag"></i>
+                                    Action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-edit-2"></i>
+                                    Another action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-message-square"></i>
+                                    Something else here</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-link"></i>
+                                    Separated link</a>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">
+                              <div class="avatar d-block"
+                                style="background-image: url(./statics/image/faces/female/12.jpg)">
+                                <span class="avatar-status bg-green"></span>
+                              </div>
+                            </td>
+                            <td>
+                              <div>Teresa Reyes</div>
+                              <div class="small text-muted">
+                                Registered: Mar 4, 2018
+                              </div>
+                            </td>
+                            <td>
+                              <div class="clearfix">
+                                <div class="float-left">
+                                  <strong>36%</strong>
+                                </div>
+                                <div class="float-right">
+                                  <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                                </div>
+                              </div>
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-red" role="progressbar" style="width: 36%"
+                                  aria-valuenow="36" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </td>
+                            <td class="text-center">
+                              <i class="payment payment-ebay"></i>
+                            </td>
+                            <td>
+                              <div class="small text-muted">Last login</div>
+                              <div>2 minutes ago</div>
+                            </td>
+                            <td class="text-center">
+                              <div class="mx-auto chart-circle chart-circle-xs" data-value="0.36" data-thickness="3"
+                                data-color="blue">
+                                <div class="chart-circle-value">36%</div>
+                              </div>
+                            </td>
+                            <td class="text-center">
+                              <div class="item-action dropdown">
+                                <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
+                                    class="fa fa-more-vertical"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-tag"></i>
+                                    Action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-edit-2"></i>
+                                    Another action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-message-square"></i>
+                                    Something else here</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-link"></i>
+                                    Separated link</a>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">
+                              <div class="avatar d-block"
+                                style="background-image: url(./statics/image/faces/female/4.jpg)">
+                                <span class="avatar-status bg-green"></span>
+                              </div>
+                            </td>
+                            <td>
+                              <div>Emma Wade</div>
+                              <div class="small text-muted">
+                                Registered: Mar 20, 2018
+                              </div>
+                            </td>
+                            <td>
+                              <div class="clearfix">
+                                <div class="float-left">
+                                  <strong>7%</strong>
+                                </div>
+                                <div class="float-right">
+                                  <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                                </div>
+                              </div>
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-red" role="progressbar" style="width: 7%" aria-valuenow="7"
+                                  aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </td>
+                            <td class="text-center">
+                              <i class="payment payment-paypal"></i>
+                            </td>
+                            <td>
+                              <div class="small text-muted">Last login</div>
+                              <div>a minute ago</div>
+                            </td>
+                            <td class="text-center">
+                              <div class="mx-auto chart-circle chart-circle-xs" data-value="0.07" data-thickness="3"
+                                data-color="blue">
+                                <div class="chart-circle-value">7%</div>
+                              </div>
+                            </td>
+                            <td class="text-center">
+                              <div class="item-action dropdown">
+                                <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
+                                    class="fa fa-more-vertical"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-tag"></i>
+                                    Action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-edit-2"></i>
+                                    Another action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-message-square"></i>
+                                    Something else here</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-link"></i>
+                                    Separated link</a>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">
+                              <div class="avatar d-block"
+                                style="background-image: url(./statics/image/faces/female/27.jpg)">
+                                <span class="avatar-status bg-green"></span>
+                              </div>
+                            </td>
+                            <td>
+                              <div>Carol Henderson</div>
+                              <div class="small text-muted">
+                                Registered: Feb 22, 2018
+                              </div>
+                            </td>
+                            <td>
+                              <div class="clearfix">
+                                <div class="float-left">
+                                  <strong>80%</strong>
+                                </div>
+                                <div class="float-right">
+                                  <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                                </div>
+                              </div>
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-green" role="progressbar" style="width: 80%"
+                                  aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </td>
+                            <td class="text-center">
+                              <i class="payment payment-visa"></i>
+                            </td>
+                            <td>
+                              <div class="small text-muted">Last login</div>
+                              <div>9 minutes ago</div>
+                            </td>
+                            <td class="text-center">
+                              <div class="mx-auto chart-circle chart-circle-xs" data-value="0.8" data-thickness="3"
+                                data-color="blue">
+                                <div class="chart-circle-value">80%</div>
+                              </div>
+                            </td>
+                            <td class="text-center">
+                              <div class="item-action dropdown">
+                                <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
+                                    class="fa fa-more-vertical"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-tag"></i>
+                                    Action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-edit-2"></i>
+                                    Another action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-message-square"></i>
+                                    Something else here</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-link"></i>
+                                    Separated link</a>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">
+                              <div class="avatar d-block"
+                                style="background-image: url(./statics/image/faces/male/20.jpg)">
+                                <span class="avatar-status bg-green"></span>
+                              </div>
+                            </td>
+                            <td>
+                              <div>Christopher Harvey</div>
+                              <div class="small text-muted">
+                                Registered: Jan 22, 2018
+                              </div>
+                            </td>
+                            <td>
+                              <div class="clearfix">
+                                <div class="float-left">
+                                  <strong>83%</strong>
+                                </div>
+                                <div class="float-right">
+                                  <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                                </div>
+                              </div>
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-green" role="progressbar" style="width: 83%"
+                                  aria-valuenow="83" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </td>
+                            <td class="text-center">
+                              <i class="payment payment-googlewallet"></i>
+                            </td>
+                            <td>
+                              <div class="small text-muted">Last login</div>
+                              <div>8 minutes ago</div>
+                            </td>
+                            <td class="text-center">
+                              <div class="mx-auto chart-circle chart-circle-xs" data-value="0.83" data-thickness="3"
+                                data-color="blue">
+                                <div class="chart-circle-value">83%</div>
+                              </div>
+                            </td>
+                            <td class="text-center">
+                              <div class="item-action dropdown">
+                                <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
+                                    class="fa fa-more-vertical"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-tag"></i>
+                                    Action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-edit-2"></i>
+                                    Another action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-message-square"></i>
+                                    Something else here</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-link"></i>
+                                    Separated link</a>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                  <div class="card">
+                    <div class="card-header">
+                      <h4 class="card-title">Browser Stats</h4>
+                    </div>
+                    <table class="table card-table">
+                      <tr>
+                        <td width="1"><i class="fa fa-chrome text-muted"></i></td>
+                        <td>Google Chrome</td>
+                        <td class="text-right"><span class="text-muted">23%</span></td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa fa-firefox text-muted"></i></td>
+                        <td>Mozila Firefox</td>
+                        <td class="text-right"><span class="text-muted">15%</span></td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa fa-safari text-muted"></i></td>
+                        <td>Apple Safari</td>
+                        <td class="text-right"><span class="text-muted">7%</span></td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa fa-internet-explorer text-muted"></i></td>
+                        <td>Internet Explorer</td>
+                        <td class="text-right"><span class="text-muted">9%</span></td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa fa-opera text-muted"></i></td>
+                        <td>Opera mini</td>
+                        <td class="text-right"><span class="text-muted">23%</span></td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa fa-edge text-muted"></i></td>
+                        <td>Microsoft edge</td>
+                        <td class="text-right"><span class="text-muted">9%</span></td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                  <div class="card">
+                    <div class="card-header">
+                      <h2 class="card-title">Projects</h2>
+                    </div>
+                    <table class="table card-table">
+                      <tr>
+                        <td>Admin Template</td>
+                        <td class="text-right">
+                          <span class="badge badge-default">65%</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Landing Page</td>
+                        <td class="text-right">
+                          <span class="badge badge-success">Finished</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Backend UI</td>
+                        <td class="text-right">
+                          <span class="badge badge-danger">Rejected</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Personal Blog</td>
+                        <td class="text-right">
+                          <span class="badge badge-default">40%</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>E-mail Templates</td>
+                        <td class="text-right">
+                          <span class="badge badge-default">13%</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Corporate Website</td>
+                        <td class="text-right">
+                          <span class="badge badge-warning">Pending</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card">
+                    <div class="card-header">
+                      <h3 class="card-title">Members</h3>
+                    </div>
+                    <div class="card-body o-auto" style="height: 15rem">
+                      <ul class="list-unstyled list-separated">
+                        <li class="list-separated-item">
+                          <div class="row align-items-center">
+                            <div class="col-auto">
+                              <span class="avatar avatar-md d-block"
+                                style="background-image: url(./statics/image/faces/female/12.jpg)"></span>
+                            </div>
+                            <div class="col">
+                              <div>
+                                <a href="javascript:void(0)" class="text-inherit">Amanda Hunt</a>
+                              </div>
+                              <small class="d-block item-except text-sm text-muted h-1x">amanda_hunt@example.com</small>
+                            </div>
+                            <div class="col-auto">
+                              <div class="item-action dropdown">
+                                <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
+                                    class="fa fa-more-vertical"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-tag"></i>
+                                    Action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-edit-2"></i>
+                                    Another action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-message-square"></i>
+                                    Something else here</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-link"></i>
+                                    Separated link</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list-separated-item">
+                          <div class="row align-items-center">
+                            <div class="col-auto">
+                              <span class="avatar avatar-md d-block"
+                                style="background-image: url(./statics/image/faces/female/21.jpg)"></span>
+                            </div>
+                            <div class="col">
+                              <div>
+                                <a href="javascript:void(0)" class="text-inherit">Laura Weaver</a>
+                              </div>
+                              <small class="d-block item-except text-sm text-muted h-1x">lauraweaver@example.com</small>
+                            </div>
+                            <div class="col-auto">
+                              <div class="item-action dropdown">
+                                <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
+                                    class="fa fa-more-vertical"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-tag"></i>
+                                    Action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-edit-2"></i>
+                                    Another action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-message-square"></i>
+                                    Something else here</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-link"></i>
+                                    Separated link</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list-separated-item">
+                          <div class="row align-items-center">
+                            <div class="col-auto">
+                              <span class="avatar avatar-md d-block"
+                                style="background-image: url(./statics/image/faces/female/29.jpg)"></span>
+                            </div>
+                            <div class="col">
+                              <div>
+                                <a href="javascript:void(0)" class="text-inherit">Margaret Berry</a>
+                              </div>
+                              <small class="d-block item-except text-sm text-muted h-1x">margaret88@example.com</small>
+                            </div>
+                            <div class="col-auto">
+                              <div class="item-action dropdown">
+                                <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
+                                    class="fa fa-more-vertical"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-tag"></i>
+                                    Action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-edit-2"></i>
+                                    Another action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-message-square"></i>
+                                    Something else here</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-link"></i>
+                                    Separated link</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list-separated-item">
+                          <div class="row align-items-center">
+                            <div class="col-auto">
+                              <span class="avatar avatar-md d-block"
+                                style="background-image: url(./statics/image/faces/female/2.jpg)"></span>
+                            </div>
+                            <div class="col">
+                              <div>
+                                <a href="javascript:void(0)" class="text-inherit">Nancy Herrera</a>
+                              </div>
+                              <small class="d-block item-except text-sm text-muted h-1x">nancy_83@example.com</small>
+                            </div>
+                            <div class="col-auto">
+                              <div class="item-action dropdown">
+                                <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
+                                    class="fa fa-more-vertical"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-tag"></i>
+                                    Action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-edit-2"></i>
+                                    Another action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-message-square"></i>
+                                    Something else here</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-link"></i>
+                                    Separated link</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list-separated-item">
+                          <div class="row align-items-center">
+                            <div class="col-auto">
+                              <span class="avatar avatar-md d-block"
+                                style="background-image: url(./statics/image/faces/male/34.jpg)"></span>
+                            </div>
+                            <div class="col">
+                              <div>
+                                <a href="javascript:void(0)" class="text-inherit">Edward Larson</a>
+                              </div>
+                              <small class="d-block item-except text-sm text-muted h-1x">edward90@example.com</small>
+                            </div>
+                            <div class="col-auto">
+                              <div class="item-action dropdown">
+                                <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
+                                    class="fa fa-more-vertical"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-tag"></i>
+                                    Action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-edit-2"></i>
+                                    Another action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-message-square"></i>
+                                    Something else here</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-link"></i>
+                                    Separated link</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list-separated-item">
+                          <div class="row align-items-center">
+                            <div class="col-auto">
+                              <span class="avatar avatar-md d-block"
+                                style="background-image: url(./statics/image/faces/female/11.jpg)"></span>
+                            </div>
+                            <div class="col">
+                              <div>
+                                <a href="javascript:void(0)" class="text-inherit">Joan Hanson</a>
+                              </div>
+                              <small class="d-block item-except text-sm text-muted h-1x">joan.hanson@example.com</small>
+                            </div>
+                            <div class="col-auto">
+                              <div class="item-action dropdown">
+                                <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
+                                    class="fa fa-more-vertical"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-tag"></i>
+                                    Action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-edit-2"></i>
+                                    Another action </a>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-message-square"></i>
+                                    Something else here</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a href="javascript:void(0)" class="dropdown-item"><i
+                                      class="dropdown-icon fa fa-link"></i>
+                                    Separated link</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-12">
+                  <div class="row">
+                    <div class="col-sm-6 col-lg-3">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="card-value float-right text-blue">+5%</div>
+                          <h3 class="mb-1">423</h3>
+                          <div class="text-muted">Users online</div>
+                        </div>
+                        <div class="card-chart-bg">
+                          <div id="chart-bg-users-1" style="height: 100%"></div>
+                        </div>
+                      </div>
+                      <script>
+                        var option = {
+                          xAxis: {
+                            type: 'category',
+                            boundaryGap: false,
+                            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+                          },
+                          yAxis: {
+                            type: 'value',
+                            show: false,
+                          },
+                          tooltip: {
+                            formatter: '{b}\n{c}',
+                            confine: true
+                          },
+                          series: [{
+                            data: [820, 932, 901, 934, 1290, 1330, 1320],
+                            type: 'line',
+                            // type: 'bar',
+                            areaStyle: {}
+                          }]
+                        };
+                        //初始化echarts实例
+                        var chart_bg_users_1 = echarts.init(document.getElementById('chart-bg-users-1'));
+                        //使用制定的配置项和数据显示图表
+                        chart_bg_users_1.setOption(option);
+                      </script>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="card-value float-right text-red">-3%</div>
+                          <h3 class="mb-1">423</h3>
+                          <div class="text-muted">Users online</div>
+                        </div>
+                        <div class="card-chart-bg">
+                          <div id="chart-bg-users-2" style="height: 100%"></div>
+                        </div>
+                      </div>
+                      <script>
+                        var option = {
+                          xAxis: {
+                            type: 'category',
+                            boundaryGap: false,
+                            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+                          },
+                          yAxis: {
+                            type: 'value',
+                            show: false,
+                          },
+                          tooltip: {
+                            formatter: '{b}\n{c}',
+                            confine: true
+                          },
+                          series: [{
+                            data: [820, 932, 901, 934, 1290, 1330, 1320],
+                            // type: 'line',
+                            type: 'bar',
+                            areaStyle: {}
+                          }]
+                        };
+                        //初始化echarts实例
+                        var chart_bg_users_2 = echarts.init(document.getElementById('chart-bg-users-2'));
+                        //使用制定的配置项和数据显示图表
+                        chart_bg_users_2.setOption(option);
+                      </script>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="card-value float-right text-green">-3%</div>
+                          <h3 class="mb-1">423</h3>
+                          <div class="text-muted">Users online</div>
+                        </div>
+                        <div class="card-chart-bg">
+                          <div id="chart-bg-users-3" style="height: 100%"></div>
+                        </div>
+                      </div>
+                      <script>
+                        var option = {
+                          xAxis: {
+                            type: 'category',
+                            boundaryGap: false,
+                            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+                          },
+                          yAxis: {
+                            type: 'value',
+                            show: false,
+                          },
+                          tooltip: {
+                            formatter: '{b}\n{c}',
+                            confine: true
+                          },
+                          series: [{
+                            data: [820, 932, 901, 934, 1290, 1330, 1320],
+                            // type: 'line',
+                            type: 'bar',
+                            areaStyle: {}
+                          }]
+                        };
+                        //初始化echarts实例
+                        var chart_bg_users_3 = echarts.init(document.getElementById('chart-bg-users-3'));
+                        //使用制定的配置项和数据显示图表
+                        chart_bg_users_3.setOption(option);
+                      </script>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="card-value float-right text-yellow">9%</div>
+                          <h3 class="mb-1">423</h3>
+                          <div class="text-muted">Users online</div>
+                        </div>
+                        <div class="card-chart-bg">
+                          <div id="chart-bg-users-4" style="height: 100%"></div>
+                        </div>
+                      </div>
+                      <script>
+                        var option = {
+                          xAxis: {
+                            type: 'category',
+                            boundaryGap: false,
+                            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+                          },
+                          yAxis: {
+                            type: 'value',
+                            show: false,
+                          },
+                          tooltip: {
+                            formatter: '{b}\n{c}',
+                            confine: true
+                          },
+                          series: [{
+                            data: [820, 932, 901, 934, 1290, 1330, 1320],
+                            // type: 'line',
+                            type: 'bar',
+                            areaStyle: {}
+                          }]
+                        };
+                        //初始化echarts实例
+                        var chart_bg_users_4 = echarts.init(document.getElementById('chart-bg-users-4'));
+                        //使用制定的配置项和数据显示图表
+                        chart_bg_users_4.setOption(option);
+                      </script>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="card">
+                    <div class="card-header">
+                      <h3 class="card-title">Invoices</h3>
+                    </div>
+                    <div class="table-responsive">
+                      <table class="table card-table table-vcenter text-nowrap">
+                        <thead>
+                          <tr>
+                            <th class="w-1">No.</th>
+                            <th>Invoice Subject</th>
+                            <th>Client</th>
+                            <th>VAT No.</th>
+                            <th>Created</th>
+                            <th>Status</th>
+                            <th>Price</th>
+                            <th></th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><span class="text-muted">001401</span></td>
+                            <td><a href="invoice.html" class="text-inherit">Design Works</a></td>
+                            <td>
+                              Carlson Limited
+                            </td>
+                            <td>
+                              87956621
+                            </td>
+                            <td>
+                              15 Dec 2017
+                            </td>
+                            <td>
+                              <span class="status-icon bg-success"></span> Paid
+                            </td>
+                            <td>$887</td>
+                            <td class="text-right">
+                              <a href="javascript:void(0)" class="btn btn-secondary btn-sm">Manage</a>
+                              <div class="dropdown">
+                                <!-- <button class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown">Actions</button> -->
+                                <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
+                                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Actions
+                                </button>
+                                <div class="dropdown-menu">
+                                  <a class="dropdown-item" href="javascript:void(0)">test1</a>
+                                  <a class="dropdown-item" href="javascript:void(0)">test2</a>
+                                  <a class="dropdown-item" href="javascript:void(0)">test3</a>
+                                  <div role="separator" class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="javascript:void(0)">Separated link</a>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <a class="icon" href="javascript:void(0)">
+                                <i class="fa fa-edit"></i>
+                              </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><span class="text-muted">001402</span></td>
+                            <td><a href="invoice.html" class="text-inherit">UX Wireframes</a></td>
+                            <td>
+                              Adobe
+                            </td>
+                            <td>
+                              87956421
+                            </td>
+                            <td>
+                              12 Apr 2017
+                            </td>
+                            <td>
+                              <span class="status-icon bg-warning"></span> Pending
+                            </td>
+                            <td>$1200</td>
+                            <td class="text-right">
+                              <a href="javascript:void(0)" class="btn btn-secondary btn-sm">Manage</a>
+                              <div class="dropdown">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle"
+                                  data-toggle="dropdown">Actions</button>
+                              </div>
+                            </td>
+                            <td>
+                              <a class="icon" href="javascript:void(0)">
+                                <i class="fa fa-edit"></i>
+                              </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><span class="text-muted">001403</span></td>
+                            <td><a href="invoice.html" class="text-inherit">New Dashboard</a></td>
+                            <td>
+                              Bluewolf
+                            </td>
+                            <td>
+                              87952621
+                            </td>
+                            <td>
+                              23 Oct 2017
+                            </td>
+                            <td>
+                              <span class="status-icon bg-warning"></span> Pending
+                            </td>
+                            <td>$534</td>
+                            <td class="text-right">
+                              <a href="javascript:void(0)" class="btn btn-secondary btn-sm">Manage</a>
+                              <div class="dropdown">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle"
+                                  data-toggle="dropdown">Actions</button>
+                              </div>
+                            </td>
+                            <td>
+                              <a class="icon" href="javascript:void(0)">
+                                <i class="fa fa-edit"></i>
+                              </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><span class="text-muted">001404</span></td>
+                            <td><a href="invoice.html" class="text-inherit">Landing Page</a></td>
+                            <td>
+                              Salesforce
+                            </td>
+                            <td>
+                              87953421
+                            </td>
+                            <td>
+                              2 Sep 2017
+                            </td>
+                            <td>
+                              <span class="status-icon bg-secondary"></span> Due in 2 Weeks
+                            </td>
+                            <td>$1500</td>
+                            <td class="text-right">
+                              <a href="javascript:void(0)" class="btn btn-secondary btn-sm">Manage</a>
+                              <div class="dropdown">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle"
+                                  data-toggle="dropdown">Actions</button>
+                              </div>
+                            </td>
+                            <td>
+                              <a class="icon" href="javascript:void(0)">
+                                <i class="fa fa-edit"></i>
+                              </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><span class="text-muted">001405</span></td>
+                            <td><a href="invoice.html" class="text-inherit">Marketing Templates</a></td>
+                            <td>
+                              Printic
+                            </td>
+                            <td>
+                              87956621
+                            </td>
+                            <td>
+                              29 Jan 2018
+                            </td>
+                            <td>
+                              <span class="status-icon bg-danger"></span> Paid Today
+                            </td>
+                            <td>$648</td>
+                            <td class="text-right">
+                              <a href="javascript:void(0)" class="btn btn-secondary btn-sm">Manage</a>
+                              <div class="dropdown">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle"
+                                  data-toggle="dropdown">Actions</button>
+                              </div>
+                            </td>
+                            <td>
+                              <a class="icon" href="javascript:void(0)">
+                                <i class="fa fa-edit"></i>
+                              </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><span class="text-muted">001406</span></td>
+                            <td><a href="invoice.html" class="text-inherit">Sales Presentation</a></td>
+                            <td>
+                              Tabdaq
+                            </td>
+                            <td>
+                              87956621
+                            </td>
+                            <td>
+                              4 Feb 2018
+                            </td>
+                            <td>
+                              <span class="status-icon bg-secondary"></span> Due in 3 Weeks
+                            </td>
+                            <td>$300</td>
+                            <td class="text-right">
+                              <a href="javascript:void(0)" class="btn btn-secondary btn-sm">Manage</a>
+                              <div class="dropdown">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle"
+                                  data-toggle="dropdown">Actions</button>
+                              </div>
+                            </td>
+                            <td>
+                              <a class="icon" href="javascript:void(0)">
+                                <i class="fa fa-edit"></i>
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- content-footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row align-items-center flex-row-reverse">
+                <div class="col-12 col-lg-auto mt-3 mt-lg-0 text-center">
+                    Copyright © 2019 <a href="">Nineswords</a>, All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+  </div>
+</body>
+<script>
+  $(document).ready(function () {
+    // $('.sidebar-menu').tree();
+  })
+  $('#search-input-box').focus(function () {
+    $('#search-btn').css('background-color', 'white');
+  }).blur(function () {
+    $('#search-btn').css('background-color', '#374850');
+  })
+  $('#sidebarToggle').click(function () {
+    $('.main-sidebar').toggle();
+  })
+</script>
+
+</html>

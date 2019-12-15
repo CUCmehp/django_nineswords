@@ -1,0 +1,127 @@
+{% load static user_helper %}
+{% block top_header %}
+    <div class="header bg-color-admin py-3">
+        <div class="container-fluid">
+            <div class="d-flex">
+                {% block logo %}
+                    <a class="header-brand">
+                        <span class="fa fa-home fa-2x icon-color-white-important"></span>
+                    </a>
+                {% endblock %}
+                <button class="btn btn-link btn-sm order-1 order-sm-0 icon-color-white-important"
+                        id="sidebarToggle" href="#">
+                    <i class="fa fa-bars"></i>
+                </button>
+                {% block site_header %}
+                    <div class="ml-6">
+                        <p class="page-title text-white">{% get_sys_common_title %}</p>
+                    </div>
+                {% endblock %}
+
+                {% block top_header_breadcrumb %}
+                    <ul class="breadcrumb-admin-top">
+                        <li class="breadcrumb-admin-top-item">
+                            <a href="#">系统1</a>
+                        </li>
+                        <li class="breadcrumb-admin-top-item"><a href="#">模块1</a></li>
+                        <li class="breadcrumb-admin-top-item"><a href="#">功能1</a></li>
+                    </ul>
+                {% endblock %}
+                <div class="d-flex order-lg-2 ml-auto">
+                    <div class="nav-item d-none d-md-flex">
+                        {% block source_code_btn %}
+                            <a href="" class="btn btn-sm admin-btn-outline-primary icon-color-white-important"
+                               target="_blank">Source code</a>
+                        {% endblock %}
+                    </div>
+                    <div class="dropdown d-none d-md-flex">
+                        {% block top_header_bell %}
+                            <a class="nav-link icon" data-toggle="dropdown">
+                                <i class="fa fa-bell"></i>
+                                <span class="nav-unread"></span>
+                            </a>
+                        {% endblock %}
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                            {% block user_message %}
+                                <a href="#" class="dropdown-item d-flex">
+                                        <span class="avatar mr-3 align-self-center"
+                                              style="background-image: url( {% static 'django_nineswords/image/faces/male/41.jpg' %})"></span>
+                                    <div>
+                                        <strong>Nathan</strong> pushed new commit: Fix page load performance issue.
+                                        <div class="small text-muted">10 minutes ago</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item d-flex">
+                                        <span class="avatar mr-3 align-self-center"
+                                              style="background-image: url({% static 'django_nineswords/image/faces/female/1.jpg' %})"></span>
+                                    <div>
+                                        <strong>Alice</strong> started new task: Tabler UI design.
+                                        <div class="small text-muted">1 hour ago</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item d-flex">
+                                        <span class="avatar mr-3 align-self-center"
+                                              style="background-image: url({% static 'django_nineswords/image/faces/female/18.jpg' %})"></span>
+                                    <div>
+                                        <strong>Rose</strong> deployed new version of NodeJS REST Api V3
+                                        <div class="small text-muted">2 hours ago</div>
+                                    </div>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item text-center text-muted-dark">Mark all as read</a>
+                            {% endblock %}
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        {% block user_center %}
+                            <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
+                                <span class="avatar"
+                                      style="background-image: url( {% block user_message_user_image %}
+                                          {% static 'django_nineswords/image/faces/female/25.jpg' %}
+                                      {% endblock %} )">
+                                </span>
+                                <span class="ml-2 d-none d-lg-block" style="min-width:60px;">
+                                <span class="icon-color-white-important">
+                                    {% block user_center_username %}Jane Pearson{% endblock %}
+                                </span>
+                                <small class="text-white-50 d-block mt-1">
+                                    {% block user_center_user_role %}Administrator{% endblock %}
+                                </small>
+                            </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                {% block user_center_user_menu %}
+                                    <a class="dropdown-item"
+                                       href="{% block user_center_user_profile_link %}#{% endblock %}">
+                                        <i class="dropdown-icon fa fa-user"></i> 个人信息
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="dropdown-icon fa fa-cog"></i> 系统设置
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <span class="float-right"><span class="badge badge-primary">6</span></span>
+                                        <i class="dropdown-icon fa fa-commenting-o"></i> 面板消息
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="dropdown-icon fa fa-comment-o"></i> 消息
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="dropdown-icon fa fa-info-circle"></i> 帮助
+                                    </a>
+                                    <a class="dropdown-item" href="{% logout_url %}">
+                                        <i class="dropdown-icon fa fa-sign-out"></i> 退出
+                                    </a>
+                                {% endblock %}
+                            </div>
+                        {% endblock %}
+                    </div>
+                </div>
+                <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0" data-toggle="collapse"
+                   data-target="#headerMenuCollapse">
+                    <span class="header-toggler-icon"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

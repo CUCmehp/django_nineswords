@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Content-Language" content="en" />
+  <meta name="msapplication-TileColor" content="#2d89ef">
+  <meta name="theme-color" content="#4188c9">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <!-- Generated: 2018-04-16 09:29:05 +0200 -->
+  <title>地图</title>
+  <!-- Dashboard Core -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <link href="statics/css/dashboard.css" rel="stylesheet" />
+  <script src="statics/js/dashboard.js"></script>
+  <script src="statics/js/bootstrap.bundle.min.js"></script>
+  <!-- Echarts -->
+  <script src="statics/js/echarts_4_2_0_rc2.min.js"></script>
+  <!-- <script src="bower_components/bootstrap/dist/js/bootstrap.min.js" ></script> -->
+  <!-- <link href="statics/css/tabler.css" rel="stylesheet" /> -->
+  <!-- c3.js Charts Plugin -->
+  <!-- <link href="./assets/plugins/charts-c3/plugin.css" rel="stylesheet" />
+    <script src="./assets/plugins/charts-c3/plugin.js"></script> -->
+  <!-- Google Maps Plugin -->
+  <!-- <link href="./assets/plugins/maps-google/plugin.css" rel="stylesheet" />
+    <script src="./assets/plugins/maps-google/plugin.js"></script> -->
+  <!-- Input Mask Plugin -->
+  <!-- <script src="./assets/plugins/input-mask/plugin.js"></script> -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- 地图相关 -->
+  <link href="openlayers/v4.6.4-dist/ol.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="openlayers/v4.6.4-dist/ol-debug.js" charset="utf-8"></script>
+  <script type="text/javascript" src="statics/js/hp_projzh.js"></script>
+</head>
+
+<body class="">
+  <div class="page">
+    <div class="page-main">
+      <div class="header py-4">
+        <div class="container">
+          <div class="d-flex">
+            <a class="header-brand" href="index.html">
+              <img src="statics/image/brand_demo.png" style="width:120px;height:32px;" class="header-brand-img" alt="logo">
+            </a>
+            <div class="d-flex order-lg-2 ml-auto">
+              <div class="nav-item d-none d-md-flex">
+                <a href="" class="btn btn-sm btn-outline-primary" target="_blank">Source code</a>
+              </div>
+              <div class="dropdown d-none d-md-flex">
+                <a class="nav-link icon" data-toggle="dropdown">
+                  <i class="fa fa-bell"></i>
+                  <span class="nav-unread"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                  <a href="#" class="dropdown-item d-flex">
+                    <span class="avatar mr-3 align-self-center" style="background-image: url(statics/image/faces/male/41.jpg)"></span>
+                    <div>
+                      <strong>Nathan</strong> pushed new commit: Fix page load performance issue.
+                      <div class="small text-muted">10 minutes ago</div>
+                    </div>
+                  </a>
+                  <a href="#" class="dropdown-item d-flex">
+                    <span class="avatar mr-3 align-self-center" style="background-image: url(statics/image/faces/female/1.jpg)"></span>
+                    <div>
+                      <strong>Alice</strong> started new task: Tabler UI design.
+                      <div class="small text-muted">1 hour ago</div>
+                    </div>
+                  </a>
+                  <a href="#" class="dropdown-item d-flex">
+                    <span class="avatar mr-3 align-self-center" style="background-image: url(statics/image/faces/female/18.jpg)"></span>
+                    <div>
+                      <strong>Rose</strong> deployed new version of NodeJS REST Api V3
+                      <div class="small text-muted">2 hours ago</div>
+                    </div>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a href="#" class="dropdown-item text-center text-muted-dark">Mark all as read</a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
+                  <span class="avatar" style="background-image: url(statics/image/faces/female/25.jpg)"></span>
+                  <span class="ml-2 d-none d-lg-block">
+                    <span class="text-default">Jane Pearson</span>
+                    <small class="text-muted d-block mt-1">Administrator</small>
+                  </span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                  <a class="dropdown-item" href="#">
+                    <i class="dropdown-icon fa fa-user"></i> 个人信息
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <i class="dropdown-icon fa fa-cog"></i> 系统设置
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <span class="float-right"><span class="badge badge-primary">6</span></span>
+                    <i class="dropdown-icon fa fa-commenting-o"></i> 面板消息
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <i class="dropdown-icon fa fa-comment-o"></i> 消息
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">
+                    <i class="dropdown-icon fa fa-info-circle"></i> 帮助
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <i class="dropdown-icon fa fa-sign-out"></i> 退出
+                  </a>
+                </div>
+              </div>
+            </div>
+            <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0" data-toggle="collapse" data-target="#headerMenuCollapse">
+              <span class="header-toggler-icon"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="header collapse d-lg-flex p-0" id="headerMenuCollapse">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-3 ml-auto">
+              <form class="input-icon my-3 my-lg-0">
+                <input type="search" class="form-control header-search" placeholder="Search&hellip;" tabindex="1">
+                <div class="input-icon-addon">
+                  <i class="fa fa-search"></i>
+                </div>
+              </form>
+            </div>
+            <div class="col-lg order-lg-first">
+              <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
+                <li class="nav-item">
+                  <a href="./index.html" class="nav-link"><i class="fe fe-home"></i>主页</a>
+                </li>
+                <li class="nav-item">
+                  <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown"><i class="fe fe-box"></i>
+                    卡片图表</a>
+                  <div class="dropdown-menu dropdown-menu-arrow">
+                    <a href="./cards.html" class="dropdown-item ">卡片设计</a>
+                    <a href="./charts.html" class="dropdown-item ">图表</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="javascript:void(0)" class="nav-link active" data-toggle="dropdown"><i class="fe fe-calendar"></i>
+                    组件</a>
+                  <div class="dropdown-menu dropdown-menu-arrow">
+                    <a href="./maps.html" class="dropdown-item ">地图</a>
+                    <a href="./store.html" class="dropdown-item ">商店</a>
+                    <a href="./blog.html" class="dropdown-item ">博客</a>
+                    <a href="./carousel.html" class="dropdown-item ">轮播图</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown"><i class="fa fa-file-o"></i>页面</a>
+                  <div class="dropdown-menu dropdown-menu-arrow">
+                    <a href="./profile.html" class="dropdown-item ">个人信息</a>
+                    <a href="./login.html" class="dropdown-item ">登录</a>
+                    <a href="./register.html" class="dropdown-item ">注册</a>
+                    <a href="./forgot-password.html" class="dropdown-item ">忘记密码</a>
+                    <a href="./400.html" class="dropdown-item ">400错误</a>
+                    <a href="./401.html" class="dropdown-item ">401错误</a>
+                    <a href="./403.html" class="dropdown-item ">403错误</a>
+                    <a href="./404.html" class="dropdown-item ">404错误</a>
+                    <a href="./500.html" class="dropdown-item ">500错误</a>
+                    <a href="./503.html" class="dropdown-item ">503错误</a>
+                    <a href="./email.html" class="dropdown-item ">邮件</a>
+                                        <a href="./empty.html" class="dropdown-item ">空白页面</a>                     <a href="./pagination.html" class="dropdown-item ">分页</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="./form-elements.html" class="nav-link"><i class="fa fa-table"></i> 表格</a>
+                </li>
+                <li class="nav-item">
+                  <a href="./gallery.html" class="nav-link"><i class="fe fe-image"></i>图片清单</a>
+                </li>
+                <li class="nav-item">
+                  <a href="./docs/index.html" class="nav-link"><i class="fe fe-file-text"></i>文档</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="my-3 my-md-5">
+        <div class="container">
+          <div class="map-header">
+            <div class="map-header-layer" id="map-background"></div>
+          </div>
+          <script>
+            var baiduMapLayer = new ol.layer.Tile({
+              source: new ol.source.XYZ({
+                projection: 'baidu',
+                maxZoom: 18,
+                tileUrlFunction: function (tileCoord) {
+                  var x = tileCoord[1];
+                  var y = tileCoord[2];
+                  var z = tileCoord[0];
+                  return 'http://online' + parseInt(Math.random() * 10) + '.map.bdimg.com/onlinelabel/?qt=tile&x=' +
+                    x + '&y=' + y + '&z=' + z + '&styles=pl';
+                },
+                tileGrid: new ol.tilegrid.TileGrid({
+                  resolutions: bmercResolutions,
+                  origin: [0, 0],
+                  extent: ol.extent.applyTransform(extent, projzh.ll2bmerc),
+                  tileSize: [256, 256]
+                })
+              })
+            });
+            // 创建地图
+            new ol.Map({
+              // 设置地图图层
+              layers: [
+                baiduMapLayer
+              ],
+              // 设置显示地图的视图
+              view: new ol.View({
+                center: ol.proj.transform([107.340456, 33.162641], 'EPSG:4326', 'EPSG:3857'), // 定义地图显示中心
+                zoom: 10,            // 并且定义地图显示层级
+              }),
+              target: 'map-background'
+            });
+          </script>
+        </div>
+        <div class="container">
+          <div class="row row-cards">
+            <div class="col-lg-4 col-md-6">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Client card</h3>
+                  <div class="card-options">
+                    <button type="button" class="btn btn-option" data-toggle="tooltip" title="Edit">
+                      <i class="fa fa-pencil"></i>
+                    </button>
+                    <div class="dropdown card-options-dropdown">
+                      <button type="button" class="btn btn-option dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"
+                          aria-hidden="true"></i></button>
+                      <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="javascript:void(0)">
+                          <i class="fa fa-bell mr-3"></i>新闻
+                        </a>
+                        <a class="dropdown-item" href="javascript:void(0)">
+                          <i class="fa fa-comment mr-3"></i>消息
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="javascript:void(0)">
+                          <i class="fa fa-pencil mr-3"></i>编辑
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-map card-map-placeholder" style="background-image: url(./statics/image/demo//staticmap.png)"></div>
+                <div class="card-body">
+                  <div class="media mb-5">
+                    <img class="d-flex mr-5 rounded" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2264%22%20height%3D%2264%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ec911398e%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ec911398e%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2213.84375%22%20y%3D%2236.65%22%3E64x64%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                      alt="Generic placeholder image">
+                    <div class="media-body">
+                      <h5>Axa Global Group</h5>
+                      <address class="text-muted small">
+                        1290 Avenua of The Americas<br>
+                        New York, NY 101040105
+                      </address>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="h6">Relationship</div>
+                      <p>Client</p>
+                    </div>
+                    <div class="col-6">
+                      <div class="h6">Business Type</div>
+                      <p>Insurance Company</p>
+                    </div>
+                    <div class="col-6">
+                      <div class="h6">Website</div>
+                      <p><a href="javascript:void(0)">http://www.axa.com</a></p>
+                    </div>
+                    <div class="col-6">
+                      <div class="h6">Office Phone</div>
+                      <p>+123456789</p>
+                    </div>
+                  </div>
+                  <div class="h6">Description</div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur dignissimos doloribus eum
+                    fugiat itaque laboriosam maiores nisi nostrum perspiciatis vero.</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Map of Warsaw metro</h3>
+                  <div class="card-options">
+                    <div class="stamp bg-red">L2</div>
+                  </div>
+                </div>
+                <!-- <div class="card-map" id="map-metro"></div> -->
+                <div class="card-map card-map-placeholder" style="background-image: url(./statics/image/demo/staticmap.png)"></div>
+                <div class="card-body">
+                  <ul class="timeline">
+                    <li class="timeline-item">
+                      <div class="timeline-badge bg-red"></div>
+                      Rondo Daszyńskiego
+                      <div class="timeline-time">2 min. ago</div>
+                    </li>
+                    <li class="timeline-item">
+                      <div class="timeline-badge"></div>
+                      Rondo ONZ
+                      <div class="timeline-time">1 min ago</div>
+                    </li>
+                    <li class="timeline-item">
+                      <div class="timeline-badge bg-primary"></div>
+                      <div>
+                        <strong>Świętokrzyska</strong>
+                        <small class="d-block text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</small>
+                      </div>
+                      <div class="timeline-time text-muted-dark">now</div>
+                    </li>
+                    <li class="timeline-item">
+                      <div class="timeline-badge"></div>
+                      Nowy Świat-Uniwersytet
+                      <div class="timeline-time">2 min.</div>
+                    </li>
+                    <li class="timeline-item">
+                      <div class="timeline-badge"></div>
+                      Centrum Nauki Kopernik
+                      <div class="timeline-time">3 min.</div>
+                    </li>
+                    <li class="timeline-item">
+                      <div class="timeline-badge"></div>
+                      Stadion Narodowy
+                      <div class="timeline-time">5 min.</div>
+                    </li>
+                    <li class="timeline-item">
+                      <div class="timeline-badge bg-green"></div>
+                      Dworzec Wileński
+                      <div class="timeline-time">7 min.</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-8 col-md-6">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">香港18区人口密度</h3>
+                </div>
+                <div class="card-body">
+                  <div class="map">
+                    <div class="map-content" id="map-world-svg1"></div>
+                  </div>
+                  <script>
+                    var myChart = echarts.init(document.getElementById('map-world-svg1'));
+                    myChart.showLoading();
+                    $.getJSON('statics/data/HK.json', function (geoJson) {
+
+                      myChart.hideLoading();
+
+                      echarts.registerMap('HK', geoJson);
+
+                      myChart.setOption(option = {
+                        title: {
+                          text: '香港18区人口密度 （2011）',
+                          subtext: '人口密度数据来自Wikipedia',
+                          sublink: 'http://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E8%A1%8C%E6%94%BF%E5%8D%80%E5%8A%83#cite_note-12'
+                        },
+                        tooltip: {
+                          trigger: 'item',
+                          formatter: '{b}<br/>{c} (p / km2)'
+                        },
+                        toolbox: {
+                          show: true,
+                          orient: 'vertical',
+                          left: 'right',
+                          top: 'center',
+                          feature: {
+                            dataView: { readOnly: false },
+                            restore: {},
+                            saveAsImage: {}
+                          }
+                        },
+                        visualMap: {
+                          min: 800,
+                          max: 50000,
+                          text: ['High', 'Low'],
+                          realtime: false,
+                          calculable: true,
+                          inRange: {
+                            color: ['lightskyblue', 'yellow', 'orangered']
+                          }
+                        },
+                        series: [
+                          {
+                            name: '香港18区人口密度',
+                            type: 'map',
+                            mapType: 'HK', // 自定义扩展图表类型
+                            itemStyle: {
+                              normal: { label: { show: true } },
+                              emphasis: { label: { show: true } }
+                            },
+                            data: [
+                              { name: '中西区', value: 20057.34 },
+                              { name: '湾仔', value: 15477.48 },
+                              { name: '东区', value: 31686.1 },
+                              { name: '南区', value: 6992.6 },
+                              { name: '油尖旺', value: 44045.49 },
+                              { name: '深水埗', value: 40689.64 },
+                              { name: '九龙城', value: 37659.78 },
+                              { name: '黄大仙', value: 45180.97 },
+                              { name: '观塘', value: 55204.26 },
+                              { name: '葵青', value: 21900.9 },
+                              { name: '荃湾', value: 4918.26 },
+                              { name: '屯门', value: 5881.84 },
+                              { name: '元朗', value: 4178.01 },
+                              { name: '北区', value: 2227.92 },
+                              { name: '大埔', value: 2180.98 },
+                              { name: '沙田', value: 9172.94 },
+                              { name: '西贡', value: 3368 },
+                              { name: '离岛', value: 806.98 }
+                            ],
+                            // 自定义名称映射
+                            nameMap: {
+                              'Central and Western': '中西区',
+                              'Eastern': '东区',
+                              'Islands': '离岛',
+                              'Kowloon City': '九龙城',
+                              'Kwai Tsing': '葵青',
+                              'Kwun Tong': '观塘',
+                              'North': '北区',
+                              'Sai Kung': '西贡',
+                              'Sha Tin': '沙田',
+                              'Sham Shui Po': '深水埗',
+                              'Southern': '南区',
+                              'Tai Po': '大埔',
+                              'Tsuen Wan': '荃湾',
+                              'Tuen Mun': '屯门',
+                              'Wan Chai': '湾仔',
+                              'Wong Tai Sin': '黄大仙',
+                              'Yau Tsim Mong': '油尖旺',
+                              'Yuen Long': '元朗'
+                            }
+                          }
+                        ]
+                      });
+                    });
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="row">
+              <div class="col-6 col-md-3">
+                <ul class="list-unstyled mb-0">
+                  <li><a href="#">First link</a></li>
+                  <li><a href="#">Second link</a></li>
+                </ul>
+              </div>
+              <div class="col-6 col-md-3">
+                <ul class="list-unstyled mb-0">
+                  <li><a href="#">Third link</a></li>
+                  <li><a href="#">Fourth link</a></li>
+                </ul>
+              </div>
+              <div class="col-6 col-md-3">
+                <ul class="list-unstyled mb-0">
+                  <li><a href="#">Fifth link</a></li>
+                  <li><a href="#">Sixth link</a></li>
+                </ul>
+              </div>
+              <div class="col-6 col-md-3">
+                <ul class="list-unstyled mb-0">
+                  <li><a href="#">Other link</a></li>
+                  <li><a href="#">Last link</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            Premium and Open Source dashboard template with responsive and high quality UI. For Free!
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="row align-items-center flex-row-reverse">
+          <div class="col-auto ml-lg-auto">
+            <div class="row align-items-center">
+              <div class="col-auto">
+                <ul class="list-inline list-inline-dots mb-0">
+                  <li class="list-inline-item"><a href="./docs/index.html">文档</a></li>
+                  <li class="list-inline-item"><a href="">FAQ</a></li>
+                </ul>
+              </div>
+              <div class="col-auto">
+                <a href="https://github.com/tabler/tabler" class="btn btn-outline-primary btn-sm">Source code</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-auto mt-3 mt-lg-0 text-center">
+            Copyright © 2018 <a href=".">Tabler</a>. Theme by <a href="https://codecalm.net" target="_blank">codecalm.net</a>
+            All rights reserved.
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

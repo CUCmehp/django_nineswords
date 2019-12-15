@@ -1,0 +1,25 @@
+{% extends 'admin/base.html' %}
+{% load i18n admin_urls static admin_modify %}
+
+{% block main_content %}
+    <div class="container-fluid">
+        {% block main_content_breadcrumb %}
+            <ul class="breadcrumb-admin-maincontent">
+                <li class="breadcrumb-admin-maincontent-item">
+                    <a href="#"><a href="{% url 'admin:index' %}"><i class="fa fa-dashboard"></i> {% trans 'Home' %}</a></a>
+                </li>
+                {% if title %}
+                    <li class="breadcrumb-admin-maincontent-item">{{ title }}</li>
+                {% endif %}
+            </ul>
+        {% endblock %}
+        <!-- Content Header (Page header) -->
+        <div class="page-header">
+            <h1 class="page-title">
+                {% block content_title %}{% if title %}{{ title }}{% endif %}{% endblock %}
+            </h1>
+        </div>
+        {% block content %}
+        {% endblock %}
+    </div>
+{% endblock %}

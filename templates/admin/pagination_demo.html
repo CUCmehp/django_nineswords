@@ -1,0 +1,58 @@
+{% extends 'admin/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <table id="result_list" class="table table-striped table-hover table-bordered">
+                    <thead>
+                    <tr>
+                        <th>
+                            <div class="text"><span>国家名称</span></div>
+                        </th>
+                        <th>
+                            <div class="text"><span>简化代码</span></div>
+                        </th>
+                        <th>
+                            <div class="text"><span>独立（建国）日期</span></div>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in country_list.object_list %}
+                        <tr class="{% if forloop.odd %}row1{% else %}row2{% endif %}">
+                            <td>{{ item.name }}</td>
+                            <td>{{ item.code }}</td>
+                            <td>{{ item.independence_day }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <div class="text-left">
+                    <label>分页示例1：</label>
+                    <ul class="pagination pagination-sm">
+                        {% for page in country_list.pages %}
+                            {% if page %}
+                                {% ifequal page country_list.number %}
+                                    <li class="active"><a href="#">{{ page }}</a></li>
+                                {% else %}
+                                    <li><a href="?{{ page.querystring }}" class="page">{{ page }}</a></li>
+                                {% endifequal %}
+                            {% else %}
+                                <li class="disabled"><a href="#">...</a></li>
+                            {% endif %}
+                        {% endfor %}
+                        <p>共{{ country_list.paginator.count }}条记录</p>
+                    </ul>
+                </div>
+                <div id="pagination" class="text-center">
+                    <label>分页示例2：</label>
+                    {{ country_list.render }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

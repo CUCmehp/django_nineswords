@@ -1,0 +1,25 @@
+{% extends 'admin/lib/_main_sidebar.html' %}
+{% load static admin_menu %}
+
+{% block user_panel_username %}
+    DemoUser
+{% endblock %}
+
+{% block user_panel_online_status %}离线{% endblock %}
+
+{% block user_panel_image %}{% static 'django_nineswords/image/faces/female/1.jpg' %}{% endblock %}
+
+{% block user_panel_online_status_class %}text-info{% endblock %}
+
+{% block nav_links %}
+    {% autoescape off %}{% menu %}{% endautoescape %}
+{% endblock %}
+
+{% block nav_link_back %}
+    <li class="{% if request.path == '/demo/pagination_demo/' %}active{% endif %}">
+        <a href="/demo/pagination_demo/">
+            <i class="fa fa-list"></i> <span>分页示例</span>
+        </a>
+    </li>
+{% endblock %}
+

@@ -1,0 +1,32 @@
+{% load static %}
+{% block script %}
+    <script src="{% static 'django_nineswords/bower_components/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'django_nineswords/js/dashboard.js' %}"></script>
+    <script src="{% static 'django_nineswords/js/bootstrap.bundle.min.js' %}"></script>
+    <!-- Echarts -->
+    {#    <script src="{% static 'django_nineswords/js/echarts_4_2_0_rc2.min.js' %}"></script>#}
+
+    <!-- pamiadmin.js -->
+    <script src="{% static 'django_nineswords/js/pamiadmin.js' %}"></script>
+
+    <script>
+        $(document).ready(function () {
+            // $('.sidebar-menu').tree();       // 初使用左侧菜单树，也可以直接在html中初始化
+            // 设置选中的菜单展开
+            // $( '.sidebar-menu li.active' ).parent().attr( "style", "display: block;" );
+            // $( '.sidebar-menu li.active' ).parent().parent().addClass( "menu-open" );
+            $( '.sidebar-menu li.active' ).parentsUntil( 'ul.sidebar-menu', 'ul.treeview-menu' ).attr( "style", "display: block;" );
+            $( '.sidebar-menu li.active' ).parentsUntil( 'ul.sidebar-menu', 'li.treeview' ).addClass( "menu-open" );
+        })
+        $('#sidebarToggle').click(function () {
+            $('.main-sidebar').toggle();
+        })
+
+        $('#sidebar-search-input').keypress( function (e) {
+            if (e.keyCode == 13 ) {
+                var search_text = $('#sidebar-search-input').val();
+                alert("搜索触发!" + search_text )
+            }
+        })
+    </script>
+{% endblock %}

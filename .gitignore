@@ -1,0 +1,10 @@
+*.pyc
+/extra_apps/django_nineswords/templatetags/__pycache__/*.pyc
+/.idea
+/apps/demo/__pycache__/*.pyc
+/logs/*.log
+/apps/demo/migrations/__pycache__/*.pyc
+/django_nineswords_demo/__pycache__/*.pyc
+/extra_apps/django_nineswords/__pycache__/*.pyc
+/extra_apps/django_nineswords/migrations/__pycache__/*.pyc
+/staticfiles/EMPTY

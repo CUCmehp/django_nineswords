@@ -1,0 +1,254 @@
+{% load  static %}
+{% block main_sidebar %}
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar sidebar-min_height">
+            <!-- Sidebar user panel -->
+            {% block user_panel %}
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="
+
+                                {% block user_panel_image %}{% static 'django_nineswords/image/faces/male/user2-160x160.jpg' %}{% endblock %}"
+                             class="img-circle"
+                             alt="User Image">
+                    </div>
+                    <div class="pull-left info">
+                        <p>
+                            <a href="{% block user_info_href %}#{% endblock %}">
+                                {% block user_panel_username %}Alexander Pierce{% endblock %}
+                            </a>
+                        </p>
+                        <a href="#">
+                            <i class="fa fa-circle {% block user_panel_online_status_class %}text-success{% endblock %}"></i>
+                            {% block user_panel_online_status %}在线{% endblock %}
+                        </a>
+                    </div>
+                </div>
+            {% endblock %}
+            {% block user_panel_search_form %}
+                <!-- search form -->
+                <form class="input-icon sidebar-form">
+                    <!-- onkeydown="keyup_submit(event);" -->
+                    <input id="sidebar-search-input" type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-icon-addon">
+                         <i class="fe fe-search"></i>
+                    </span>
+                </form>
+                <!-- /.search form -->
+            {% endblock %}
+
+            <!-- sidebar menu -->
+            <ul class="sidebar-menu" data-widget="tree">
+                {% block nav_links_outer %}
+                    <li class="header">{% block nav_heading %}主导航{% endblock %}</li>
+                    {% block nav_link_front %}
+
+                    {% endblock %}
+                    {% block nav_links %}
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-dashboard"></i> <span>仪表盘</span>
+                                <span class="pull-right-container">
+                                    <small class="badge pull-right bg-green">new</small>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-files-o"></i>
+                                <span>卡片图表</span>
+                                <span class="pull-right-container">
+                            <span class="ml-auto badge badge-primary">2</span>
+                        </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="cards.html"><i class="fa fa-circle-o"></i>卡片设计</a></li>
+                                <li><a href="charts.html"><i class="fa fa-circle-o"></i>图表</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="pages/widgets.html">
+                                <i class="fa fa-th"></i>
+                                <span>组件</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="maps.html"><i class="fa fa-circle-o"></i>地图</a></li>
+                                <li><a href="store.html"><i class="fa fa-circle-o"></i>商店</a></li>
+                                <li><a href="blog.html"><i class="fa fa-circle-o"></i>博客</a></li>
+                                <li><a href="carousel.html"><i class="fa fa-circle-o"></i>轮播图</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-pie-chart"></i>
+                                <span>页面</span>
+                                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="profile.html"><i class="fa fa-circle-o"></i>个人信息</a></li>
+                                <li><a href="login.html"><i class="fa fa-circle-o"></i>登录</a></li>
+                                <li><a href="register.html"><i class="fa fa-circle-o"></i>注册</a></li>
+                                <li><a href="forgot-password.html"><i class="fa fa-circle-o"></i>忘记密码</a></li>
+                                <li><a href="400.html"><i class="fa fa-circle-o"></i>400错误</a></li>
+                                <li><a href="401.html"><i class="fa fa-circle-o"></i>401错误</a></li>
+                                <li><a href="403.html"><i class="fa fa-circle-o"></i>403错误</a></li>
+                                <li><a href="404.html"><i class="fa fa-circle-o"></i>404错误</a></li>
+                                <li><a href="500.html"><i class="fa fa-circle-o"></i>500错误</a></li>
+                                <li><a href="504.html"><i class="fa fa-circle-o"></i>504错误</a></li>
+                                <li><a href="email.html"><i class="fa fa-envelope-o"></i>邮件</a></li>
+                                <li><a href="empty.html"><i class="fa fa-circle-o"></i>空白页面</a></li>
+                                <li><a href="pagination.html"><i class="fa fa-circle-o"></i>分页</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-laptop"></i>
+                                <span>UI 元素</span>
+                                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> 常规</a></li>
+                                <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> 图标</a></li>
+                                <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> 按钮</a></li>
+                                <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> 滑动</a></li>
+                                <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> 时间轴</a></li>
+                                <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> 模块</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-edit"></i> <span>表单</span>
+                                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> 常规元素</a></li>
+                                <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> 高级元素</a></li>
+                                <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> 编辑</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="form-elements.html">
+                                <i class="fa fa-table"></i> <span>表格</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="gallery.html">
+                                <i class="fa fa-image"></i><span>图片墙</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pages/calendar.html">
+                                <i class="fa fa-calendar"></i> <span>日历</span>
+                                <span class="pull-right-container">
+                    <small class="badge pull-right bg-red">3</small>
+                    <small class="badge pull-right bg-blue">17</small>
+                  </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="email.html">
+                                <i class="fa fa-envelope"></i> <span>邮箱</span>
+                                <span class="pull-right-container">
+                    <small class="badge pull-right bg-yellow">12</small>
+                    <small class="badge pull-right bg-green">16</small>
+                    <small class="badge pull-right bg-red">5</small>
+                  </span>
+                            </a>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-folder"></i> <span>样例</span>
+                                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> 发票单据</a>
+                                </li>
+                                <li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> 设置</a></li>
+                                <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> 登陆</a></li>
+                                <li><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> 注册</a>
+                                </li>
+                                <li><a href="pages/examples/lockscreen.html"><i class="fa fa-circle-o"></i> 锁屏</a>
+                                </li>
+                                <li><a href="pages/examples/404.html"><i class="fa fa-circle-o"></i> 404 Error</a>
+                                </li>
+                                <li><a href="pages/examples/500.html"><i class="fa fa-circle-o"></i> 500 Error</a>
+                                </li>
+                                <li><a href="pages/examples/blank.html"><i class="fa fa-circle-o"></i> Blank
+                                    Page</a></li>
+                                <li><a href="pages/examples/pace.html"><i class="fa fa-circle-o"></i> Pace Page</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-share"></i><span>多级菜单</span>
+                                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="fa fa-circle-o"></i> 一级菜单</a></li>
+                                <li class="treeview">
+                                    <a href="#">
+                                        <i class="fa fa-chevron-circle-down"></i>一级菜单可展开
+                                        <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                      </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                        <li class="treeview">
+                                            <a href="#"><i class="fa fa-chevron-circle-down"></i> 二级菜单可展开
+                                                <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                          </span>
+                                            </a>
+                                            <ul class="treeview-menu">
+                                                <li class="treeview">
+                                                    <a href="#"><i class="fa fa-circle-o"></i> 三级菜单可展开
+                                                        <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                              </span>
+                                                    </a>
+                                                    <ul class="treeview-menu">
+                                                        <li>
+                                                            <a href="#"><i class="fa fa-circle-o"></i> 四级菜单不可展开</a>
+                                                        </li>
+                                                        <li class="active">
+                                                            <a href="#"><i class="fa fa-circle-o"></i> 四级菜单不可展开</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="#"><i class="fa fa-circle-o"></i> 三级菜单不可展开</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#"><i class="fa fa-circle-o"></i> 二级菜单不可展开</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i> 一级菜单</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><i class="fa fa-book"></i> <span>文档</span></a></li>
+                        <li class="header">标签</li>
+                        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>重要</span></a></li>
+                        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>警告</span></a></li>
+                        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>消息</span></a></li>
+                    {% endblock %} {# end of nav_links #}
+                    {% block nav_link_back %}{% endblock %}
+                {% endblock %} {# end of nav_links_outer #}
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+{% endblock %}
